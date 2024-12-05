@@ -1,0 +1,39 @@
+{
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:8080"
+  },
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/gateway/reports/bill",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "DownstreamPathTemplate": "/api/reports/bill",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5267
+        }
+      ],
+      "RouteClaimRequirement": {},
+      "FileCacheOptions": {
+        "TtlSeconds": 0
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/reports/show/salary",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/Reports/show/salary",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5267
+        }
+      ],
+      "RouteClaimRequirement": {},
+      "FileCacheOptions": {
+        "TtlSeconds": 0
+      }
+    }
+  ]
+}
